@@ -2,6 +2,7 @@ package Selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 @SuppressWarnings("unused")
 public class FB_page_After_login {
@@ -84,7 +85,7 @@ else
 {
 	System.out.println("wrong page");
 	}
-driver.navigate().back();
+//driver.navigate().back();
 
 //Notification tab
 
@@ -100,7 +101,7 @@ else
 {
 	System.out.println("wrong page");
 	}
-driver.navigate().back();
+//driver.navigate().back();
 
 //search
 
@@ -123,6 +124,34 @@ else
 //search for friend
 driver.findElement(By.xpath("//input[@name='query']")).sendKeys("sinchana J N" + "\n");
 
+Thread.sleep(2000);
+
+
+driver.findElement(By.linkText("People")).click();
+Thread.sleep(2000);
+
+
+/*driver.switchTo().frame(0);
+
+Actions act = new Actions(driver);
+act.moveToElement(driver.findElement(By.xpath("//img[@id='u_6g_w']"))).click().build().perform();
+
+//driver.findElement(By.xpath("//img[@id='u_6g_w']")).click();
+*/
+driver.navigate().back();
+Thread.sleep(2000);
+driver.navigate().back();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//*[@id='u_0_f']/div/div")).click();
+
+Thread.sleep(6000);
+driver.get("https://m.facebook.com/sharadha.g.16?ref=bookmarks");
+
+Thread.sleep(2000);
+driver.findElement(By.linkText("Photo")).click();
+
+Thread.sleep(6000);
+driver.findElement(By.xpath("//button[@value='Upload a New Photo']")).sendKeys("C:\\Users\\Madhushree Meghraj\\Desktop\\madhu.png");
 
 
 
